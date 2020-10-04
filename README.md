@@ -1,16 +1,17 @@
-# Lend_A_Hand
+# Lend A Hand
 
-A new Flutter project.
+App that can help volunteers on the field to collect information about families who are facing unusual calamities and help them get support.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Clone the repo to your computer to get started:
 
-A few resources to get you started if this is your first Flutter project:
+`git clone https://github.com/subhashissuara/Lend-A-Hand.git`
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+Before creating a new branch, check if you need to pull the repo for updated files
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Workflow
+
+Each new addition of feature needs to be done on a separate branch and should be merged with master after proper review.
+
+Any new features, issues, additions should be created in issues section for easier tracking and if review is required feel free to do a pull request.
