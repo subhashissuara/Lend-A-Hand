@@ -21,7 +21,7 @@ class _HomeState extends State<Home> {
         ],
       ),
       floatingActionButton: Padding(
-        padding: const EdgeInsets.only(right: 25, bottom: 25),
+        padding: const EdgeInsets.only(right: 5, bottom: 5),
         child: FloatingActionButton(
           onPressed: () {
             
