@@ -1,4 +1,4 @@
-package com.example.Lend_A_Hand
+package org.seedsnet.lendahand
 
 import io.flutter.embedding.android.FlutterActivity
 
