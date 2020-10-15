@@ -1,11 +1,13 @@
+import 'package:Lend_A_Hand/services/authentication.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-class Home extends StatefulWidget {
+class HomeView extends StatefulWidget {
   @override
-  _HomeState createState() => _HomeState();
+  _HomeViewState createState() => _HomeViewState();
 }
 
-class _HomeState extends State<Home> {
+class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,7 +17,7 @@ class _HomeState extends State<Home> {
           IconButton(
             icon: Icon(Icons.logout),  
             onPressed: () {
-              
+              context.read<AuthenticationService>().signOut();
             }
             )
         ],
@@ -24,7 +26,7 @@ class _HomeState extends State<Home> {
         padding: const EdgeInsets.only(right: 5, bottom: 5),
         child: FloatingActionButton(
           onPressed: () {
-            
+            // Implement Forms
           },
           tooltip: 'Report',
           child: Icon(Icons.add),
