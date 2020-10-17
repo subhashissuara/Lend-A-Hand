@@ -242,27 +242,27 @@ class _SignInViewState extends State<SignInView> {
       onPressed: () {
         Navigator.pushReplacementNamed(context, '/signUp');
       },
-      child: RichText(
-        text: TextSpan(
-          children: [
-            TextSpan(
-              text: 'Don\'t have an Account? ',
-              style: TextStyle(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          AutoSizeText(
+            'Don\'t have an Account? ',
+            style: TextStyle(
                 color: Colors.white,
                 fontSize: 18.0,
                 fontWeight: FontWeight.w400,
               ),
             ),
-            TextSpan(
-              text: 'Sign Up',
-              style: TextStyle(
+          AutoSizeText(
+            'Sign Up',
+            style: TextStyle(
                 color: Colors.white,
                 fontSize: 18.0,
                 fontWeight: FontWeight.bold,
               ),
             ),
-          ],
-        ),
+        ],
       ),
     );
   }
