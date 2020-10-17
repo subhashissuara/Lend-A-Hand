@@ -231,7 +231,7 @@ class _SignUpViewState extends State<SignUpView> {
         mainAxisSize: MainAxisSize.min,
         children: [
           AutoSizeText(
-            'Already have an Account? ',
+            'Have an Account? ',
             style: TextStyle(
                 color: Colors.white,
                 fontSize: 18.0,
