@@ -41,6 +41,8 @@ class AuthenticationService {
   }
 }
 
+var confirmPassword;
+
 class EmailValidator {
   static String validate(String value) {
     if (value.isEmpty) {
@@ -52,11 +54,24 @@ class EmailValidator {
 
 class PasswordValidator {
   static String validate(String value) {
+    confirmPassword = value;
     if (value.isEmpty) {
       return "Password can't be empty";
     }
     if (value.length < 6) {
       return "Password must be 6 characters or more";
+    }
+    return null;
+  }
+}
+
+class ConfirmPasswordValidator {
+  static String validate(String value) {
+    if (value.isEmpty) {
+      return "Confirm password can't be empty";
+    }
+    if (value != confirmPassword) {
+      return "Passwords don't match";
     }
     return null;
   }
