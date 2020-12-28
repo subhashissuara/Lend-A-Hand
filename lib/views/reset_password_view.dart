@@ -172,63 +172,65 @@ class _ResetPasswordViewState extends State<ResetPasswordView> {
     final _width = MediaQuery.of(context).size.width;
     final _height = MediaQuery.of(context).size.height;
 
-    return Scaffold(
-      body: Container(
-        height: _height,
-        width: _width,
-        child: Container(
-          child: Stack(
-            children: <Widget>[
-              Container(
-                height: double.infinity,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                    colors: [
-                      Color(0xFF12B6D9),
-                      Color(0xFF7351E1),
-                    ],
+    return SafeArea(
+      child: Scaffold(
+        body: Container(
+          height: _height,
+          width: _width,
+          child: Container(
+            child: Stack(
+              children: <Widget>[
+                Container(
+                  height: double.infinity,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [
+                        Color(0xFF12B6D9),
+                        Color(0xFF7351E1),
+                      ],
+                    ),
                   ),
                 ),
-              ),
-              showAlert(),
-              Container(
-                child: SafeArea(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Text(
-                        'Reset Password',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontFamily: 'OpenSans',
-                          fontSize: 30.0,
-                          fontWeight: FontWeight.bold,
+                showAlert(),
+                Container(
+                  child: SafeArea(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Text(
+                          'Reset Password',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontFamily: 'OpenSans',
+                            fontSize: 30.0,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 50.0),
-                        child: Form(
-                            key: _formKey,
-                            child: Column(
-                              children: [
-                                SizedBox(height: 30.0),
-                                _buildEmailTextField(),
-                                _buildLoginButton(),
-                                SizedBox(
-                                  height: 20.0,
-                                ),
-                                _buildResetButton(),
-                              ],
-                            )),
-                      ),
-                    ],
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 50.0),
+                          child: Form(
+                              key: _formKey,
+                              child: Column(
+                                children: [
+                                  SizedBox(height: 30.0),
+                                  _buildEmailTextField(),
+                                  _buildLoginButton(),
+                                  SizedBox(
+                                    height: 20.0,
+                                  ),
+                                  _buildResetButton(),
+                                ],
+                              )),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
