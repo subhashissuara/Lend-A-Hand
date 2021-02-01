@@ -1,4 +1,5 @@
 import 'package:Lend_A_Hand/services/authentication.dart';
+import 'package:Lend_A_Hand/views/form_view.dart';
 import 'package:Lend_A_Hand/views/home_view.dart';
 import 'package:Lend_A_Hand/views/reset_password_view.dart';
 import 'package:Lend_A_Hand/views/signIn_view.dart';
@@ -42,6 +43,7 @@ class MyApp extends StatelessWidget {
           '/signUp': (BuildContext context) => SignUpView(),
           '/signIn': (BuildContext context) => SignInView(),
           '/resetPassword': (BuildContext context) => ResetPasswordView(),
+          '/form': (BuildContext context) => FormView(),
         },
       ),
     );
