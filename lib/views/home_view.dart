@@ -28,7 +28,7 @@ class _HomeViewState extends State<HomeView> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
           Text(
-            "My Reports Page Working in Progress...",
+            "My Reports Page Work in Progress...",
             style: TextStyle(
               fontSize: 24,
               color: Colors.grey,
