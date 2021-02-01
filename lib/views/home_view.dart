@@ -22,11 +22,26 @@ class _HomeViewState extends State<HomeView> {
             )
         ],
       ),
+      // Work In Progress
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+          Text(
+            "My Reports Page Working in Progress...",
+            style: TextStyle(
+              fontSize: 24,
+              color: Colors.grey,
+            ),
+            textAlign: TextAlign.center,
+          )
+        ],),
+      ),
       floatingActionButton: Padding(
         padding: const EdgeInsets.only(right: 5, bottom: 5),
         child: FloatingActionButton(
           onPressed: () {
-            // Implement Forms
+            Navigator.pushNamed(context, '/form');
           },
           tooltip: 'Report',
           child: Icon(Icons.add),
