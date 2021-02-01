@@ -194,6 +194,77 @@ class _SignUpViewState extends State<SignUpView> {
       ],
     );
   }
+  Widget _buildConfirmPasswordTextField() {
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Text(
+            'Confirm Password',
+            style: ourLabelStyle,
+          ),
+          SizedBox(height: 10.0),
+          TextFormField(
+            validator: ConfirmPasswordValidator.validate,
+            obscureText: true,
+            style: TextStyle(
+              color: Colors.black,
+              fontFamily: 'OpenSans',
+            ),
+            decoration: InputDecoration(
+              filled: true,
+              fillColor: Colors.white,
+              // focusColor: Colors.black,
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10),
+                borderSide: BorderSide(
+                    width: 0, 
+                    style: BorderStyle.none,
+                ),
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10),
+                borderSide: BorderSide(
+                    width: 2, 
+                    // style: BorderStyle.none,
+                ),
+              ),
+              errorStyle: TextStyle(
+                fontSize: 15,
+                fontWeight: FontWeight.bold,
+                fontFamily: 'OpenSans',
+                color: Colors.deepOrange,
+              ),
+              errorBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10),
+                borderSide: BorderSide(
+                    width: 2, 
+                    color: Colors.deepOrange,
+                    //style: BorderStyle.none,
+                ),
+              ),
+              focusedErrorBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10),
+                borderSide: BorderSide(
+                    width: 2, 
+                    // style: BorderStyle.none,
+                ),
+              ),
+              border: InputBorder.none,
+              contentPadding: EdgeInsets.all(25.0),
+              prefixIcon: Icon(
+                Icons.lock,
+                color: Colors.black87,
+              ),
+              hintText: 'Enter your Password',
+              hintStyle: TextStyle(
+                color: Colors.black38,
+                fontFamily: 'OpenSans',
+              ),
+            ),
+          ),
+        ],
+      );
+    }
 
   Widget _buildSignUpButton() {
     return Container(
@@ -256,73 +327,75 @@ class _SignUpViewState extends State<SignUpView> {
     final _width = MediaQuery.of(context).size.width;
     final _height = MediaQuery.of(context).size.height;
 
-    return SafeArea(
-      child: Scaffold(
-        body: SingleChildScrollView(
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: Container(
+          height: _height,
+          width: _width,
           child: Container(
-            height: _height,
-            width: _width,
-            child: Container(
-              child: Stack(
-                children: <Widget>[
-                  Container(
-                    height: double.infinity,
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomCenter,
-                        colors: [
-                          Color(0xFF12B6D9),
-                          Color(0xFF7351E1),
-                        ],
-                      ),
+            child: Stack(
+              children: <Widget>[
+                Container(
+                  height: double.infinity,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [
+                        Color(0xFF12B6D9),
+                        Color(0xFF7351E1),
+                      ],
                     ),
                   ),
-                  showAlert(),
-                  Container(
-                    child: SafeArea(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Text(
-                            'Sign Up',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontFamily: 'OpenSans',
-                              fontSize: 30.0,
-                              fontWeight: FontWeight.bold,
-                            ),
+                ),
+                showAlert(),
+                Container(
+                  child: SafeArea(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Text(
+                          'Sign Up',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontFamily: 'OpenSans',
+                            fontSize: 30.0,
+                            fontWeight: FontWeight.bold,
                           ),
-                          Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 50.0),
-                            child: Form(
-                                key: _formKey,
-                                child: Column(
-                                  children: [
-                                    SizedBox(height: 30.0),
-                                    _buildEmailTextField(),
-                                    SizedBox(
-                                      height: 30.0,
-                                    ),
-                                    _buildPasswordTextField(),
-                                    SizedBox(
-                                      height: 20.0,
-                                    ),
-                                    _buildSignUpButton(),
-                                    SizedBox(
-                                      height: 30.0,
-                                    ),
-                                    _buildLoginButton(),
-                                  ],
-                                )),
-                          ),
-                        ],
-                      ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 50.0),
+                          child: Form(
+                              key: _formKey,
+                              child: Column(
+                                children: [
+                                  SizedBox(height: 30.0),
+                                  _buildEmailTextField(),
+                                  SizedBox(
+                                    height: 30.0,
+                                  ),
+                                  _buildPasswordTextField(),
+                                  SizedBox(
+                                    height: 20.0,
+                                  ),
+                                  _buildConfirmPasswordTextField(),
+                                  SizedBox(
+                                    height: 20.0,
+                                  ),
+                                  _buildSignUpButton(),
+                                  SizedBox(
+                                    height: 20.0,
+                                  ),
+                                  _buildLoginButton(),
+                                ],
+                              )),
+                        ),
+                      ],
                     ),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
         ),
